@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="850.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController">
+   <children>
+      <VBox prefHeight="400.0" prefWidth="850.0">
+         <children>
+            <HBox alignment="CENTER_RIGHT" prefHeight="35.0" prefWidth="850.0" spacing="25.0">
+               <children>
+                  <HBox alignment="CENTER_LEFT" prefHeight="100.0" prefWidth="425.0" spacing="25.0">
+                     <HBox.margin>
+                        <Insets left="25.0" />
+                     </HBox.margin>
+                  </HBox>
+                  <HBox alignment="CENTER_RIGHT" prefHeight="100.0" prefWidth="425.0" spacing="25.0">
+                     <HBox.margin>
+                        <Insets right="25.0" />
+                     </HBox.margin>
+                     <children>
+                        <Button mnemonicParsing="false" onAction="#onActionClose" text="Close" />
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+            <TabPane prefHeight="375.0" prefWidth="850.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab text="Customer Schedule">
+                  <content>
+                    <AnchorPane prefHeight="331.0" prefWidth="850.0">
+                           <children>
+                              <VBox prefHeight="331.0" prefWidth="850.0">
+                                 <children>
+                                    <TableView fx:id="apptCustTableView" prefHeight="275.0" prefWidth="200.0">
+                                      <columns>
+                                        <TableColumn fx:id="apptIdCustCol" prefWidth="114.0" text="Appointment ID" />
+                                        <TableColumn fx:id="apptTitleCustCol" prefWidth="71.0" text="Title" />
+                                          <TableColumn fx:id="apptTypeCustCol" prefWidth="71.0" text="Type" />
+                                          <TableColumn fx:id="apptDescCustCol" prefWidth="71.0" text="Description" />
+                                          <TableColumn fx:id="apptStartCustCol" prefWidth="71.0" text="Start" />
+                                          <TableColumn fx:id="apptEndCustCol" prefWidth="71.0" text="End" />
+                                          <TableColumn fx:id="apptCustCustCol" prefWidth="96.0" text="Customer ID" />
+                                      </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER" prefHeight="35.0" prefWidth="850.0" spacing="25.0">
+                                       <children>
+                                          <ComboBox fx:id="apptCustomerCbx" onAction="#onActionCustomerSelected" prefWidth="200.0" />
+                                       </children></HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab text="Appoitment Totals">
+                     <content>
+                        <AnchorPane prefHeight="331.0" prefWidth="850.0">
+                           <children>
+                              <VBox prefHeight="331.0" prefWidth="850.0">
+                                 <children>
+                                    <HBox alignment="CENTER" prefHeight="275.0" prefWidth="850.0" spacing="25.0">
+                                       <children>
+                                          <TableView fx:id="apptTypeTotalTableView" prefHeight="500.0" prefWidth="250.0">
+                                            <columns>
+                                              <TableColumn fx:id="apptTypeNameCol" prefWidth="162.0" text="Appointment Type" />
+                                              <TableColumn fx:id="apptTypeTotalCol" minWidth="3.0" prefWidth="87.0" text="Total" />
+                                            </columns>
+                                          </TableView>
+                                          <TableView fx:id="apptMonthTotalTableView" prefHeight="200.0" prefWidth="250.0">
+                                            <columns>
+                                              <TableColumn fx:id="apptMonthNameCol" prefWidth="162.0" text="Appointment Month" />
+                                              <TableColumn fx:id="apptMonthTotalCol" prefWidth="87.0" text="Total" />
+                                            </columns>
+                                          </TableView>
+                                       </children>
+                                       <padding>
+                                          <Insets bottom="25.0" top="25.0" />
+                                       </padding>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+                  <Tab text="Contact Schedule">
+                     <content>
+                        <AnchorPane prefHeight="331.0" prefWidth="850.0">
+                           <children>
+                              <VBox prefHeight="331.0" prefWidth="850.0">
+                                 <children>
+                                    <TableView fx:id="apptContactTableView" prefHeight="275.0" prefWidth="200.0">
+                                       <columns>
+                                          <TableColumn fx:id="apptIdContactCol" prefWidth="114.0" text="Appointment ID" />
+                                          <TableColumn fx:id="apptTitleContactCol" prefWidth="71.0" text="Title" />
+                                          <TableColumn fx:id="apptTypeContactCol" prefWidth="71.0" text="Type" />
+                                          <TableColumn fx:id="apptDescContactCol" prefWidth="71.0" text="Description" />
+                                          <TableColumn fx:id="apptStartContactCol" prefWidth="71.0" text="Start" />
+                                          <TableColumn fx:id="apptEndContactCol" prefWidth="71.0" text="End" />
+                                          <TableColumn fx:id="apptCustContactCol" prefWidth="96.0" text="Customer ID" />
+                                          <TableColumn fx:id="apptContactContactCol" prefWidth="96.0" text="Contact ID" />
+                                       </columns>
+                                    </TableView>
+                                    <HBox alignment="CENTER" prefHeight="35.0" prefWidth="850.0" spacing="25.0">
+                                       <children>
+                                          <ComboBox fx:id="apptContactCbx" onAction="#onActionContactSelected" prefWidth="200.0" />
+                                       </children>
+                                    </HBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </AnchorPane>
+                     </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </children>
+      </VBox>
+   </children>
+</Pane>
